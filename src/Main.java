@@ -4,11 +4,15 @@ import java.util.Collections;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Practice 1: ");
+		/*System.out.println("Practice 1: ");
 		Practice1();
 		System.out.println("\nPractice 2: ");
-		Practice2();
+		Practice2();*/
 		
+		Lattice lattice;
+		lattice = new Lattice(100, false);
+		while(lattice.walk());
+		lattice.display("TEST DISPLAY", 30);
 	}
 
 	public static void Practice1(){ //Bad copy pasta is bad
@@ -17,7 +21,9 @@ public class Main {
 		Lattice lattice;
 		lattice = new Lattice(100, false);
 		while(lattice.walk()); //walk until stuck
-		listOfPathLengths.add(lattice.getPathLength());
+		/*listOfPathLengths.add(lattice.getPathLength());
+                FiniteLattice FL = new FiniteLattice();
+                FL.FiniteLat (1000);*/
 		
 		System.out.println("1. Calculate the path length (the number of steps travelled until being trapped).");
 		System.out.println("	Path Length: " + mean( listOfPathLengths));

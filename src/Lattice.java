@@ -1,9 +1,14 @@
+import java.awt.Dimension;
 import java.util.ArrayList;
+
+import javax.swing.JFrame;
 
 public class Lattice{
 	private ArrayList<Point> vistedPoints = new ArrayList<Point>(); //using arrayList instead of boolean[][] for infinite lattice case
 	private int xPos; //current x position in lattice
 	private int yPos; //current y position in lattice
+        private int xPos2;
+        private int yPos2;
 	private int dim; //max dim of lattice
 	private int pathLength = 0; 
 	private boolean isInfinite; //whether the lattice is infinite or not
@@ -141,8 +146,27 @@ public class Lattice{
 		return false;
 	}
 	
+	public void display(String title, int scale){
+		int SCALE = scale;
+		int WIDTH = (xMax() - xMin())*(SCALE);
+		int HEIGHT = (yMax() - yMin())*(SCALE);
+		System.out.println(WIDTH + " : " + HEIGHT);
+		//JFrame settings//
+        JFrame frame = new JFrame(title);
+        frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        frame.setMinimumSize(new Dimension (WIDTH, HEIGHT));
+        frame.setMaximumSize(new Dimension (WIDTH, HEIGHT));
+        frame.setLocationRelativeTo(null);
+        Display disp = new Display(vistedPoints, scale, WIDTH, HEIGHT);
+        frame.add(disp);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        disp.repaint();
+        ///////////////////
+	}
 	
-	private class Point{
+	
+	public class Point{
 		int x;
 		int y;
 		
@@ -151,13 +175,12 @@ public class Lattice{
 			y = yPos;
 		}
 		
-		private int getX(){
+		public int getX(){
 			return x;
 		}
-		private int getY(){
+		public int getY(){
 			return y;
 		}
-		
 		public boolean equals(Point p) {
 			if(x == p.getX() && y == p.getY())
 				return true;
@@ -165,6 +188,13 @@ public class Lattice{
 				return false;
 		}
 	}
+        public ArrayList<Point> pointsList(){
+            return vistedPoints;
+        }
+        public int getX(){
+            return xPos;
+        }
+        public int getY(){
+            return yPos;
+        }
 }
-
-
