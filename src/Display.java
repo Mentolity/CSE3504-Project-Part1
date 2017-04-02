@@ -57,12 +57,12 @@ public class Display extends JPanel {
         	}
         	
         	g.drawLine(x1, y1, x2, y2);
-        	System.out.println("i: " + i);
+        	/*System.out.println("i: " + i);
         	System.out.println("x1: " + x1);
         	System.out.println("x2: " + x2);
         	System.out.println("y1: " + y1);
         	System.out.println("y2: " + y2);
-        	System.out.println("___________________");
+        	System.out.println("___________________");*/
         	
         	int tx1 = x2;
         	int ty1 = y2;
@@ -75,12 +75,5 @@ public class Display extends JPanel {
 		
 		y1 = (HEIGHT/2);
 		y2 = (HEIGHT/2);
-        
-       /* FiniteLattice FL;
-        FL = new FiniteLattice();
-        for (int i = 0; i < FL.getLines().size()-1; i++){
-            g.setColor (Color.BLACK);
-            g.drawLine (FL.getLines().get(i).getx1(), FL.getLines().get(i).gety1(), FL.getLines().get(i).getx2(), FL.getLines().get(i).gety2());
-        }*/
     }
 }

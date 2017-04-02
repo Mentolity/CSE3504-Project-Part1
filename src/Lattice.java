@@ -7,8 +7,6 @@ public class Lattice{
 	private ArrayList<Point> vistedPoints = new ArrayList<Point>(); //using arrayList instead of boolean[][] for infinite lattice case
 	private int xPos; //current x position in lattice
 	private int yPos; //current y position in lattice
-        private int xPos2;
-        private int yPos2;
 	private int dim; //max dim of lattice
 	private int pathLength = 0; 
 	private boolean isInfinite; //whether the lattice is infinite or not
@@ -150,7 +148,7 @@ public class Lattice{
 		int SCALE = scale;
 		int WIDTH = (xMax() - xMin())*(SCALE);
 		int HEIGHT = (yMax() - yMin())*(SCALE);
-		System.out.println(WIDTH + " : " + HEIGHT);
+		//System.out.println(WIDTH + " : " + HEIGHT);
 		//JFrame settings//
         JFrame frame = new JFrame(title);
         frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));

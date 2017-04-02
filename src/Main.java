@@ -4,15 +4,27 @@ import java.util.Collections;
 public class Main {
 
 	public static void main(String[] args) {
-		/*System.out.println("Practice 1: ");
+		System.out.println("Practice 1: ");
 		Practice1();
 		System.out.println("\nPractice 2: ");
-		Practice2();*/
-		
+		Practice2();
+		visuals();
+	}
+	
+	public static void visuals(){
 		Lattice lattice;
+		//100x100 Lattice Visual
 		lattice = new Lattice(100, false);
 		while(lattice.walk());
-		lattice.display("TEST DISPLAY", 30);
+		lattice.display("100x100 Lattice", 30);
+		
+		//Infinite Lattice 5000 steps Visual
+		lattice = new Lattice(); //new infinite lattice
+		for(int i=0; i<5000; i++){//take 5000 walks
+			if(!lattice.walk())//if were stuck there's no point in continuing to walk
+				break;
+		}
+		lattice.display("Infinite Lattice, 5000 Steps", 30);
 	}
 
 	public static void Practice1(){ //Bad copy pasta is bad
